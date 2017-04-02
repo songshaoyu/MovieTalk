@@ -1,4 +1,7 @@
-<h3><%= @movie.title %></h3>
-<br><br>
-
-<p><%= simple_format(@movie.description)%></p>
+<div class="col-md-12">
+  <div class="group">
+    <%= link_to("Edit", edit_movie_path(@movie), class: "btn btn-default pull-right")%>
+  </div>
+  <h2><%= @movie.title %></h2>
+  <p><%= @movie.description %></p>
+</div>
