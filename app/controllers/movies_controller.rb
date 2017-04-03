@@ -18,6 +18,7 @@ class MoviesController < ApplicationController
     @movie = Movie.new(movie_params)
     @movie.user = current_user
     if @movie.save
+      current_user.favourite!(@movie)
       redirect_to movies_path
     else
       render :new
@@ -69,7 +70,7 @@ class MoviesController < ApplicationController
   end
 
   private
-
+     
   def find_movie_and_check_permission
     @movie = Movie.find(params[:id])
     if current_user != @movie.user

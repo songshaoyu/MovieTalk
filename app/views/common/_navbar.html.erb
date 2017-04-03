@@ -1,7 +1,8 @@
 <nav class="navbar navbar-inverse" role="navigation">
   <div class="container-fluid">
     <div class="navbar-header">
-      <a href="#" class="navbar-brand">MovieTalk</a>
+      <%= link_to("MovieTalk", movies_path, :class =>  :"navbar navbar-brand") %>
+
     </div>
 
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -16,6 +17,9 @@
                  <b class="caret"></b>
                </a>
                <ul class="dropdown-menu">
+                 <li><%= link_to("My Movies", account_movies_path) %></li>
+                 <li><%= link_to("My Reviews", account_reviews_path) %></li>
+                 <li class="divider"></li>
                  <li><%= link_to("退出",destroy_user_session_path, method: :delete) %></li>
                </ul>
                </li>

@@ -7,6 +7,11 @@ Rails.application.routes.draw do
     end
     resources :reviews
   end
+
+  namespace :account do
+    resources :movies
+    resources :reviews
+  end
   root 'movies#index'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
