@@ -4,9 +4,11 @@
     <span class="pull-right">
    <% if current_user && current_user.is_member_of?(@movie) %>
      <label class="label label-success"> Favourite </label>
+     <%= link_to("Unfavourite movie", unfavourite_movie_path(@movie), method: :post, class: "btn btn-default") %>
      <%= link_to("Review", new_movie_review_path(@movie), class: "btn btn-default pull-right") %>
    <% else %>
      <label class="label label-warning"> Unfavourite  </label>
+     <%= link_to("Favourite movie", favourite_movie_path(@movie), method: :post, class: "btn btn-default") %>
    <% end %>
  </span>
 
